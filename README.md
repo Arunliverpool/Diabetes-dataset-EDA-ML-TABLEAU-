@@ -44,8 +44,13 @@ EDA was performed using Python (pandas, matplotlib, seaborn):
 Trained and evaluated multiple supervised ML algorithms using scikit-learn:
 
 - **Logistic Regression**
+  Chosen for its simplicity, interpretability, and effectiveness as a baseline model for binary classification problems like diabetes prediction.
 - **Random Forest**
+  Selected for its ability to model complex, non-linear relationships and handle feature interactions, often resulting in strong predictive performance.
 - **Support Vector Machine (SVM)**
+  Used for its robustness to high-dimensional data and its effectiveness in finding the optimal decision boundary between classes.
+
+
 
 **Pipeline:**
 - Split data into training and test sets
@@ -59,17 +64,20 @@ Trained and evaluated multiple supervised ML algorithms using scikit-learn:
 
 Evaluated each model using key metrics:
 
-| Model                | Accuracy | Precision | Recall | F1 Score | ROC AUC |
-|----------------------|----------|-----------|--------|----------|---------|
-| Logistic Regression  |   XX     |   XX      |  XX    |   XX     |   XX    |
-| Random Forest        |   XX     |   XX      |  XX    |   XX     |   XX    |
-| SVM                  |   XX     |   XX      |  XX    |   XX     |   XX    |
+| Model                | Accuracy | Precision (Diab) | Recall (Diab) | F1 (Diab) | ROC-AUC |
+|----------------------|----------|------------------|---------------|-----------|---------|
+| Logistic Regression  | 0.73     | 0.60             | 0.70          | 0.65      | 0.82    |
+| Random Forest        | 0.76     | 0.63             | 0.74          | 0.68      | 0.83    |
+| SVM                  | 0.71     | 0.56             | 0.76          | 0.65      | 0.80    |
 
-- **Confusion Matrix:** Assessed types of errors (false positives, false negatives)
-- **ROC Curve:** Compared models using ROC-AUC
-- **Error Analysis:** Examined false positive/false negative counts per model
+- **Confusion Matrix:**
+This analysis helps understand not just overall accuracy, but also which type of error is more common (e.g., is the model missing actual diabetes cases, or is it over-predicting diabetes?).
 
-_(Actual numbers are in the Jupyter notebook and Tableau dashboard)_
+- **ROC Curve:**  
+  Computed and plotted the Receiver Operating Characteristic (ROC) curve for each classifier, measuring the tradeoff between the true positive rate (sensitivity/recall) and the false positive rate across different thresholds. The **Area Under the Curve (ROC-AUC)** quantifies model discrimination: a higher AUC means better ability to distinguish between diabetics and non-diabetics. This provides an evaluation metric that is less sensitive to class imbalance.
+
+- **Error Analysis:**  
+Calculated and visualized the total counts of **false positives** and **false negatives** for each model, both numerically and via bar charts in Tableau. This deeper error analysis is essential for real-world health applications, as the cost of misclassifying a diabetic patient (FN) is very different from the cost of a false positive. By comparing error types across models, we can select the model that best balances sensitivity and specificity for the intended use case.
 
 ---
 
@@ -125,5 +133,5 @@ Features in the dashboard:
 ## Contact
 
 Questions? Suggestions?  
-Open an issue or contact [your.email@example.com](mailto:your.email@example.com).
+Open an issue or contact [your.email@example.com](mailto:arunkumarmuthu33@gmail.com).
 
